@@ -30,5 +30,5 @@ if(insereProduto($conexao, $produto)) { ?>
 <?php
 }
 ?>
-
+<!-- teste git -->
 <?php include("rodape.php"); ?>
