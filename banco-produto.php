@@ -1,5 +1,7 @@
 <?php
 require_once("conecta.php");
+require_once("class/Categoria.php");
+require_once("class/Produto.php");
 
 function listaProdutos($conexao) {
 
@@ -61,4 +63,20 @@ function removeProduto($conexao, $id) {
 	$query = "delete from produtos where id = {$id}";
 
 	return mysqli_query($conexao, $query);
+}
+
+function listaCategoria($conexao){
+	$categoria = array();
+	$query = "select * from categoria";
+	$resultado = mysqli_query($conexao,$query);
+
+	while ($categoria_array) = mysql_fetch_assoc($resultado) {
+	
+		$categoria = new Categoria();
+		$categoria->id = $categoria_array['id'];
+		$categoria->nome = $categoria_array['nome'];
+
+		array_push($categorias, $categoria);
+
+	}
 }
