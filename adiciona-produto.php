@@ -8,6 +8,9 @@ verificaUsuario();
 
 $produto = new Produto();
 
+$categoria = new Categoria();
+$categoria->id = $_POST['categoria_id'];
+
 $produto->nome = $_POST['nome'];
 $produto->preco = $_POST['preco'];
 $produto->descricao = $_POST['descricao'];
@@ -18,7 +21,7 @@ if(array_key_exists('usado', $_POST)) {
 	$produto->usado = "false";
 }
 
-$produto->categoria_id = $_POST['categoria_id'];
+$produto->categoria->id = $categoria;
 
 if(insereProduto($conexao, $produto)) { ?>
 	<p class="text-success">O produto <?= $produto->nome ?>, <?= $produto->preco ?> foi adicionado.</p>
