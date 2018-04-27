@@ -8,10 +8,10 @@ require_once("class/Categoria.php");
 verificaUsuario();
 
 $categoria = new Categoria();
-$categoria->id = 1;
+$categoria->setId(1);
 
 $produto = new Produto();
-$produto->categoria = $categoria;
+$produto->setCategoria($categoria);
 
 $categorias = listaCategorias($conexao);
 
