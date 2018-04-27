@@ -1,15 +1,9 @@
 <?php
 
-	class Categoria{
+class Categoria {
 
-		public $id;
-
-		public $nome;
-
-
-
-	}
-	
-
+	public $id;
+	public $nome;
+}
 
 ?>
