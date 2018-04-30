@@ -10,7 +10,11 @@ class Livro extends Produto {
 
 	public function setIsbn($isbn) {
 		$this->isbn = $isbn;
-	}
+    }
+    
+    public function calculaImposto() {
+        return $this->preco * 0.065;
+    }
 }
 
 ?>

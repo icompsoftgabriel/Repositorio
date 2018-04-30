@@ -4,10 +4,11 @@ class Produto {
 
 	private $id;
 	private $nome;
-	private $preco;
+	protected $preco;
 	private $descricao;
 	private $categoria;
 	private $usado;
+	private $tipoProduto
 
 	function __construct($nome, $preco, $descricao, Categoria $categoria, $usado) {
 		$this->nome = $nome;
@@ -15,6 +16,10 @@ class Produto {
 		$this->descricao = $descricao;
 		$this->categoria = $categoria;
 		$this->usado = $usado;
+	}
+
+	public function calculaImposto() {
+		return $this->preco * 0.195;
 	}
 
 	public function getId() {
@@ -48,6 +53,13 @@ class Produto {
 	public function setUsado($usado) {
 		$this->usado = $usado;
 	}
+	public function getTipoProduto() {
+        return $this->tipoProduto;
+    }   
+
+    public function setTipoProduto($tipoProduto) {
+        $this->tipoProduto = $tipoProduto;
+    }
 
 	public function precoComDesconto($valor = 0.1) {
 
@@ -58,12 +70,12 @@ class Produto {
 		return $this->preco;
 	}
 
-	public function temIsbn() {
-		return $this instanceof Livro;
-	}
-
 	function __toString() {
 		return $this->nome.": R$ ".$this->preco;
+	}
+
+	public function temIsbn() {
+		return $this instanceof Livro;
 	}
 }
 
